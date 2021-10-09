@@ -16,4 +16,8 @@ public class TeacherService {
     public List<TeacherEntity> teachers() {
         return teacherRepository.findAll();
     }
+
+    public TeacherEntity addTeachers(TeacherEntity teacherEntity) {
+        return teacherRepository.save(teacherEntity);
+    }
 }
