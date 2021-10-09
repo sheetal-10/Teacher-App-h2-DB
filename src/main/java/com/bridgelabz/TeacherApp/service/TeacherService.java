@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TeacherService {
@@ -23,5 +24,14 @@ public class TeacherService {
 
     public TeacherEntity updateTeachers(TeacherEntity teacherEntity) {
         return teacherRepository.save(teacherEntity);
+    }
+
+    public String deleteTeachers(int id) {
+        Optional<TeacherEntity> teacherEntity = teacherRepository.findById(id);
+        if (teacherEntity.isPresent()) {
+            teacherRepository.delete(teacherEntity.get());
+            return "Record deleted successfully";
+        }
+        return "Record does not exists with this id : " + id;
     }
 }

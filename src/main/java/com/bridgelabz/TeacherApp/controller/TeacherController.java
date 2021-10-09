@@ -33,4 +33,9 @@ public class TeacherController {
         return teacherService.updateTeachers(teacherEntity);
     }
 
+    @DeleteMapping(value = "/teacher")
+    public String deleteTeachers(@RequestParam int id) {
+        return teacherService.deleteTeachers(id);
+    }
+
 }
