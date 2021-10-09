@@ -27,7 +27,7 @@ public class TeacherController {
     }
 
     @PostMapping(value = "/teacher")
-    public TeacherEntity addStudent(@RequestBody TeacherEntity teacherEntity) {
+    public TeacherEntity addTeachers(@RequestBody TeacherEntity teacherEntity) {
         return teacherService.addTeachers(teacherEntity);
     }
 
