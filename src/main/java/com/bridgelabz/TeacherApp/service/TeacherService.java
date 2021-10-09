@@ -20,4 +20,8 @@ public class TeacherService {
     public TeacherEntity addTeachers(TeacherEntity teacherEntity) {
         return teacherRepository.save(teacherEntity);
     }
+
+    public TeacherEntity updateTeachers(TeacherEntity teacherEntity) {
+        return teacherRepository.save(teacherEntity);
+    }
 }

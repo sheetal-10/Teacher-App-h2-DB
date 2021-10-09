@@ -3,10 +3,7 @@ package com.bridgelabz.TeacherApp.controller;
 import com.bridgelabz.TeacherApp.entity.TeacherEntity;
 import com.bridgelabz.TeacherApp.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,6 +26,11 @@ public class TeacherController {
     @PostMapping(value = "/teacher")
     public TeacherEntity addTeachers(@RequestBody TeacherEntity teacherEntity) {
         return teacherService.addTeachers(teacherEntity);
+    }
+
+    @PutMapping(value = "/update-teacher")
+    public TeacherEntity updateTeachers(@RequestBody TeacherEntity teacherEntity) {
+        return teacherService.updateTeachers(teacherEntity);
     }
 
 }
